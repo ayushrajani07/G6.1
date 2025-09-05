@@ -1,0 +1,1711 @@
+2025-09-03 13:10:08,385 - __main__ - INFO - Starting G6 Options Trading Platform v2.0
+2025-09-03 13:10:08,385 - src.metrics.metrics - INFO - Initialized 12 metrics for g6-platform
+2025-09-03 13:10:08,390 - src.metrics.metrics - INFO - Metrics server started on 0.0.0.0:9108
+2025-09-03 13:10:08,486 - src.metrics.metrics - INFO - Metrics available at http://0.0.0.0:9108/metrics
+2025-09-03 13:10:08,487 - __main__ - ERROR - Failed to initialize KiteProvider: KITE_API_KEY is required
+2025-09-03 13:15:52,297 - __main__ - INFO - Starting G6 Options Trading Platform v2.0
+2025-09-03 13:15:52,305 - src.metrics.metrics - INFO - Initialized 12 metrics for g6-platform
+2025-09-03 13:15:52,314 - src.metrics.metrics - INFO - Metrics server started on 0.0.0.0:9108
+2025-09-03 13:15:52,406 - src.metrics.metrics - INFO - Metrics available at http://0.0.0.0:9108/metrics
+2025-09-03 13:15:52,407 - __main__ - INFO - KiteProvider initialized successfully
+2025-09-03 13:15:52,407 - src.storage.csv_sink - INFO - CsvSink initialized with base_dir: data\csv
+2025-09-03 13:15:52,447 - src.storage.influx_sink - INFO - InfluxSink initialized: http://localhost:8086, org=your-org, bucket=your-bucket
+2025-09-03 13:15:52,447 - __main__ - INFO - Storage initialized successfully
+2025-09-03 13:15:52,447 - __main__ - INFO - Providers initialized successfully
+2025-09-03 13:15:52,447 - __main__ - INFO - Starting collection loop with 60s interval
+2025-09-03 13:15:52,447 - src.collectors.unified_collectors - ERROR - Failed to collect data for NIFTY: 'MetricsRegistry' object has no attribute 'create_timer'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 142, in run_unified_collectors
+    with metrics.create_timer("collection", index=index_symbol):
+         ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'MetricsRegistry' object has no attribute 'create_timer'
+2025-09-03 13:15:52,458 - __main__ - ERROR - Collection cycle failed: MetricsRegistry.record_collection_run() missing 1 required positional argument: 'duration'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 142, in run_unified_collectors
+    with metrics.create_timer("collection", index=index_symbol):
+         ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'MetricsRegistry' object has no attribute 'create_timer'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\main.py", line 237, in main
+    run_unified_collectors(
+    ~~~~~~~~~~~~~~~~~~~~~~^
+        index_params=config.index_params,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        influx_sink=influx_sink,
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 149, in run_unified_collectors
+    metrics.record_collection_run(index_symbol, success=False)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: MetricsRegistry.record_collection_run() missing 1 required positional argument: 'duration'
+2025-09-03 13:16:21,225 - __main__ - INFO - Received shutdown signal
+2025-09-03 13:16:30,143 - __main__ - INFO - Received shutdown signal
+2025-09-03 13:16:37,012 - __main__ - INFO - Received shutdown signal
+2025-09-03 13:16:52,448 - __main__ - INFO - G6 Platform stopped gracefully
+2025-09-03 13:18:12,361 - __main__ - INFO - Starting G6 Options Trading Platform v2.0
+2025-09-03 13:18:12,361 - src.metrics.metrics - INFO - Initialized 11 metrics for g6-platform
+2025-09-03 13:18:12,366 - src.metrics.metrics - INFO - Metrics server started on 0.0.0.0:9108
+2025-09-03 13:18:12,366 - src.metrics.metrics - INFO - Metrics available at http://0.0.0.0:9108/metrics
+2025-09-03 13:18:12,367 - __main__ - INFO - KiteProvider initialized successfully
+2025-09-03 13:18:12,367 - src.storage.csv_sink - INFO - CsvSink initialized with base_dir: data\csv
+2025-09-03 13:18:12,377 - src.storage.influx_sink - INFO - InfluxSink initialized: http://localhost:8086, org=your-org, bucket=your-bucket
+2025-09-03 13:18:12,378 - __main__ - INFO - Storage initialized successfully
+2025-09-03 13:18:12,378 - __main__ - INFO - Providers initialized successfully
+2025-09-03 13:18:12,378 - __main__ - INFO - Starting collection loop with 60s interval
+2025-09-03 13:18:12,378 - src.collectors.unified_collectors - ERROR - Failed to collect data for NIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:18:12,379 - src.collectors.unified_collectors - ERROR - Failed to collect data for BANKNIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:18:12,379 - src.collectors.unified_collectors - ERROR - Failed to collect data for FINNIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:18:12,380 - src.collectors.unified_collectors - ERROR - Failed to collect data for SENSEX: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:19:12,379 - src.collectors.unified_collectors - ERROR - Failed to collect data for NIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:19:12,380 - src.collectors.unified_collectors - ERROR - Failed to collect data for BANKNIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:19:12,381 - src.collectors.unified_collectors - ERROR - Failed to collect data for FINNIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:19:12,381 - src.collectors.unified_collectors - ERROR - Failed to collect data for SENSEX: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:20:12,379 - src.collectors.unified_collectors - ERROR - Failed to collect data for NIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:20:12,380 - src.collectors.unified_collectors - ERROR - Failed to collect data for BANKNIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:20:12,380 - src.collectors.unified_collectors - ERROR - Failed to collect data for FINNIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:20:12,381 - src.collectors.unified_collectors - ERROR - Failed to collect data for SENSEX: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:21:12,379 - src.collectors.unified_collectors - ERROR - Failed to collect data for NIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:21:12,380 - src.collectors.unified_collectors - ERROR - Failed to collect data for BANKNIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:21:12,380 - src.collectors.unified_collectors - ERROR - Failed to collect data for FINNIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:21:12,381 - src.collectors.unified_collectors - ERROR - Failed to collect data for SENSEX: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:22:12,379 - src.collectors.unified_collectors - ERROR - Failed to collect data for NIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:22:12,380 - src.collectors.unified_collectors - ERROR - Failed to collect data for BANKNIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:22:12,381 - src.collectors.unified_collectors - ERROR - Failed to collect data for FINNIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:22:12,381 - src.collectors.unified_collectors - ERROR - Failed to collect data for SENSEX: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:23:12,380 - src.collectors.unified_collectors - ERROR - Failed to collect data for NIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:23:12,381 - src.collectors.unified_collectors - ERROR - Failed to collect data for BANKNIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:23:12,381 - src.collectors.unified_collectors - ERROR - Failed to collect data for FINNIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:23:12,382 - src.collectors.unified_collectors - ERROR - Failed to collect data for SENSEX: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:24:12,380 - src.collectors.unified_collectors - ERROR - Failed to collect data for NIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:24:12,381 - src.collectors.unified_collectors - ERROR - Failed to collect data for BANKNIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:24:12,382 - src.collectors.unified_collectors - ERROR - Failed to collect data for FINNIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:24:12,383 - src.collectors.unified_collectors - ERROR - Failed to collect data for SENSEX: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:25:12,381 - src.collectors.unified_collectors - ERROR - Failed to collect data for NIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:25:12,381 - src.collectors.unified_collectors - ERROR - Failed to collect data for BANKNIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:25:12,382 - src.collectors.unified_collectors - ERROR - Failed to collect data for FINNIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:25:12,382 - src.collectors.unified_collectors - ERROR - Failed to collect data for SENSEX: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:26:12,381 - src.collectors.unified_collectors - ERROR - Failed to collect data for NIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:26:12,382 - src.collectors.unified_collectors - ERROR - Failed to collect data for BANKNIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:26:12,382 - src.collectors.unified_collectors - ERROR - Failed to collect data for FINNIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:26:12,383 - src.collectors.unified_collectors - ERROR - Failed to collect data for SENSEX: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:27:12,382 - src.collectors.unified_collectors - ERROR - Failed to collect data for NIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:27:12,383 - src.collectors.unified_collectors - ERROR - Failed to collect data for BANKNIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:27:12,383 - src.collectors.unified_collectors - ERROR - Failed to collect data for FINNIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:27:12,384 - src.collectors.unified_collectors - ERROR - Failed to collect data for SENSEX: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:28:12,382 - src.collectors.unified_collectors - ERROR - Failed to collect data for NIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:28:12,383 - src.collectors.unified_collectors - ERROR - Failed to collect data for BANKNIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:28:12,383 - src.collectors.unified_collectors - ERROR - Failed to collect data for FINNIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:28:12,384 - src.collectors.unified_collectors - ERROR - Failed to collect data for SENSEX: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:29:12,382 - src.collectors.unified_collectors - ERROR - Failed to collect data for NIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:29:12,383 - src.collectors.unified_collectors - ERROR - Failed to collect data for BANKNIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:29:12,383 - src.collectors.unified_collectors - ERROR - Failed to collect data for FINNIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:29:12,384 - src.collectors.unified_collectors - ERROR - Failed to collect data for SENSEX: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:30:12,382 - src.collectors.unified_collectors - ERROR - Failed to collect data for NIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:30:12,383 - src.collectors.unified_collectors - ERROR - Failed to collect data for BANKNIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:30:12,384 - src.collectors.unified_collectors - ERROR - Failed to collect data for FINNIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:30:12,384 - src.collectors.unified_collectors - ERROR - Failed to collect data for SENSEX: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:31:12,382 - src.collectors.unified_collectors - ERROR - Failed to collect data for NIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:31:12,383 - src.collectors.unified_collectors - ERROR - Failed to collect data for BANKNIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:31:12,384 - src.collectors.unified_collectors - ERROR - Failed to collect data for FINNIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:31:12,384 - src.collectors.unified_collectors - ERROR - Failed to collect data for SENSEX: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:32:12,383 - src.collectors.unified_collectors - ERROR - Failed to collect data for NIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:32:12,384 - src.collectors.unified_collectors - ERROR - Failed to collect data for BANKNIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:32:12,384 - src.collectors.unified_collectors - ERROR - Failed to collect data for FINNIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:32:12,385 - src.collectors.unified_collectors - ERROR - Failed to collect data for SENSEX: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:33:12,383 - src.collectors.unified_collectors - ERROR - Failed to collect data for NIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:33:12,383 - src.collectors.unified_collectors - ERROR - Failed to collect data for BANKNIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:33:12,384 - src.collectors.unified_collectors - ERROR - Failed to collect data for FINNIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:33:12,384 - src.collectors.unified_collectors - ERROR - Failed to collect data for SENSEX: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:34:12,383 - src.collectors.unified_collectors - ERROR - Failed to collect data for NIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:34:12,384 - src.collectors.unified_collectors - ERROR - Failed to collect data for BANKNIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:34:12,384 - src.collectors.unified_collectors - ERROR - Failed to collect data for FINNIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:34:12,385 - src.collectors.unified_collectors - ERROR - Failed to collect data for SENSEX: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:35:12,383 - src.collectors.unified_collectors - ERROR - Failed to collect data for NIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:35:12,384 - src.collectors.unified_collectors - ERROR - Failed to collect data for BANKNIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:35:12,385 - src.collectors.unified_collectors - ERROR - Failed to collect data for FINNIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:35:12,386 - src.collectors.unified_collectors - ERROR - Failed to collect data for SENSEX: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:36:12,384 - src.collectors.unified_collectors - ERROR - Failed to collect data for NIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:36:12,385 - src.collectors.unified_collectors - ERROR - Failed to collect data for BANKNIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:36:12,385 - src.collectors.unified_collectors - ERROR - Failed to collect data for FINNIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:36:12,386 - src.collectors.unified_collectors - ERROR - Failed to collect data for SENSEX: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:37:12,384 - src.collectors.unified_collectors - ERROR - Failed to collect data for NIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:37:12,385 - src.collectors.unified_collectors - ERROR - Failed to collect data for BANKNIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:37:12,385 - src.collectors.unified_collectors - ERROR - Failed to collect data for FINNIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:37:12,386 - src.collectors.unified_collectors - ERROR - Failed to collect data for SENSEX: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:38:12,384 - src.collectors.unified_collectors - ERROR - Failed to collect data for NIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:38:12,385 - src.collectors.unified_collectors - ERROR - Failed to collect data for BANKNIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:38:12,386 - src.collectors.unified_collectors - ERROR - Failed to collect data for FINNIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:38:12,387 - src.collectors.unified_collectors - ERROR - Failed to collect data for SENSEX: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:39:12,384 - src.collectors.unified_collectors - ERROR - Failed to collect data for NIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:39:12,385 - src.collectors.unified_collectors - ERROR - Failed to collect data for BANKNIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:39:12,386 - src.collectors.unified_collectors - ERROR - Failed to collect data for FINNIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:39:12,386 - src.collectors.unified_collectors - ERROR - Failed to collect data for SENSEX: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:40:12,384 - src.collectors.unified_collectors - ERROR - Failed to collect data for NIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:40:12,385 - src.collectors.unified_collectors - ERROR - Failed to collect data for BANKNIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:40:12,386 - src.collectors.unified_collectors - ERROR - Failed to collect data for FINNIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:40:12,386 - src.collectors.unified_collectors - ERROR - Failed to collect data for SENSEX: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:41:12,385 - src.collectors.unified_collectors - ERROR - Failed to collect data for NIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:41:12,385 - src.collectors.unified_collectors - ERROR - Failed to collect data for BANKNIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:41:12,386 - src.collectors.unified_collectors - ERROR - Failed to collect data for FINNIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:41:12,386 - src.collectors.unified_collectors - ERROR - Failed to collect data for SENSEX: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:42:12,385 - src.collectors.unified_collectors - ERROR - Failed to collect data for NIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:42:12,386 - src.collectors.unified_collectors - ERROR - Failed to collect data for BANKNIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:42:12,386 - src.collectors.unified_collectors - ERROR - Failed to collect data for FINNIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:42:12,387 - src.collectors.unified_collectors - ERROR - Failed to collect data for SENSEX: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:43:12,385 - src.collectors.unified_collectors - ERROR - Failed to collect data for NIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:43:12,386 - src.collectors.unified_collectors - ERROR - Failed to collect data for BANKNIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:43:12,386 - src.collectors.unified_collectors - ERROR - Failed to collect data for FINNIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:43:12,387 - src.collectors.unified_collectors - ERROR - Failed to collect data for SENSEX: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:44:12,385 - src.collectors.unified_collectors - ERROR - Failed to collect data for NIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:44:12,386 - src.collectors.unified_collectors - ERROR - Failed to collect data for BANKNIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:44:12,387 - src.collectors.unified_collectors - ERROR - Failed to collect data for FINNIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:44:12,387 - src.collectors.unified_collectors - ERROR - Failed to collect data for SENSEX: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:45:12,386 - src.collectors.unified_collectors - ERROR - Failed to collect data for NIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:45:12,386 - src.collectors.unified_collectors - ERROR - Failed to collect data for BANKNIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:45:12,387 - src.collectors.unified_collectors - ERROR - Failed to collect data for FINNIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:45:12,387 - src.collectors.unified_collectors - ERROR - Failed to collect data for SENSEX: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:46:12,386 - src.collectors.unified_collectors - ERROR - Failed to collect data for NIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:46:12,386 - src.collectors.unified_collectors - ERROR - Failed to collect data for BANKNIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:46:12,387 - src.collectors.unified_collectors - ERROR - Failed to collect data for FINNIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:46:12,387 - src.collectors.unified_collectors - ERROR - Failed to collect data for SENSEX: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:47:12,386 - src.collectors.unified_collectors - ERROR - Failed to collect data for NIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:47:12,387 - src.collectors.unified_collectors - ERROR - Failed to collect data for BANKNIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:47:12,388 - src.collectors.unified_collectors - ERROR - Failed to collect data for FINNIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:47:12,388 - src.collectors.unified_collectors - ERROR - Failed to collect data for SENSEX: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:48:12,386 - src.collectors.unified_collectors - ERROR - Failed to collect data for NIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:48:12,387 - src.collectors.unified_collectors - ERROR - Failed to collect data for BANKNIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:48:12,387 - src.collectors.unified_collectors - ERROR - Failed to collect data for FINNIFTY: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:48:12,387 - src.collectors.unified_collectors - ERROR - Failed to collect data for SENSEX: 'IndexParams' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 143, in run_unified_collectors
+    _collect_index_data(
+    ~~~~~~~~~~~~~~~~~~~^
+        index_symbol, params, providers, csv_sink, influx_sink, now
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\collectors\unified_collectors.py", line 163, in _collect_index_data
+    strike_step = int(params.get("strike_step", 50))
+                      ^^^^^^^^^^
+AttributeError: 'IndexParams' object has no attribute 'get'
+2025-09-03 13:48:35,257 - __main__ - INFO - Received shutdown signal
+2025-09-03 13:49:12,386 - __main__ - INFO - G6 Platform stopped gracefully
+2025-09-03 13:52:40,993 - __main__ - INFO - Starting G6 Options Trading Platform v2.0
+2025-09-03 13:52:40,994 - src.metrics.metrics - INFO - Initialized 11 metrics for g6-platform
+2025-09-03 13:52:40,999 - src.metrics.metrics - INFO - Metrics server started on 0.0.0.0:9108
+2025-09-03 13:52:40,999 - src.metrics.metrics - INFO - Metrics available at http://0.0.0.0:9108/metrics
+2025-09-03 13:52:41,000 - __main__ - INFO - KiteProvider initialized successfully
+2025-09-03 13:52:41,000 - src.storage.csv_sink - INFO - CsvSink initialized with base_dir: data\csv
+2025-09-03 13:52:41,010 - src.storage.influx_sink - INFO - InfluxSink initialized: http://localhost:8086, org=your-org, bucket=your-bucket
+2025-09-03 13:52:41,010 - __main__ - INFO - Storage initialized successfully
+2025-09-03 13:52:41,010 - __main__ - INFO - Providers initialized successfully
+2025-09-03 13:52:41,010 - __main__ - INFO - Starting collection loop with 60s interval
+2025-09-03 13:52:41,011 - __main__ - ERROR - Collection cycle failed: run_unified_collectors() missing 1 required positional argument: 'metrics'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\main.py", line 238, in main
+    run_unified_collectors(
+    ~~~~~~~~~~~~~~~~~~~~~~^
+        index_params=config.index_params,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        influx_sink=influx_sink,
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+TypeError: run_unified_collectors() missing 1 required positional argument: 'metrics'
+2025-09-03 13:53:41,011 - __main__ - ERROR - Collection cycle failed: run_unified_collectors() missing 1 required positional argument: 'metrics'
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\G6\qq\g6_reorganized\src\main.py", line 238, in main
+    run_unified_collectors(
+    ~~~~~~~~~~~~~~~~~~~~~~^
+        index_params=config.index_params,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        influx_sink=influx_sink,
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+TypeError: run_unified_collectors() missing 1 required positional argument: 'metrics'
+2025-09-03 13:54:19,478 - __main__ - INFO - Received shutdown signal
+2025-09-03 13:54:41,011 - __main__ - INFO - G6 Platform stopped gracefully
